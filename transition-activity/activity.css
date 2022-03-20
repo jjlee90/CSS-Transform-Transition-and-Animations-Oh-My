@@ -1,1 +1,74 @@
-
+    button:hover {
+        transition: 2s;
+        color: ghostwhite;
+    }
+    /* Article Section */
+    
+    article {
+        position: relative;
+    }
+    
+    img {
+        display: block;
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .capParagraph {
+        position: absolute;
+        /*positioning content to sit on top of the image */
+        top: 0;
+        /*setting position values to 0 to push content to the top of the page */
+        right: 0;
+        bottom: 0;
+        left: 0;
+        color: white;
+        transform: translateY(100%);
+        /*Pushing the content down the image by 100%. 
+        Content is below the image but can't be seen */
+    }
+    /*On hover content will move from bottom to the top of the page*/
+    
+    .caption:hover .capParagraph {
+        transition: 2s ease-out;
+        transform: translateY(5%);
+    }
+    /* Caption Title will sit at the bottom 10% of the image */
+    
+    .capTitle {
+        text-align: left;
+        font-size: 1.4em;
+        margin: 0;
+        padding: 0 10px 15px;
+        transform: translateY(-90%);
+    }
+    /* On hover Caption Title will move to the top of the page */
+    
+    .caption:hover .capTitle {
+        transform: translate(0);
+        transition: transform 2s ease-out;
+    }
+    
+    p {
+        text-align: center;
+        padding: 25px 10px;
+        font-size: .8em;
+    }
+    /* Creating a transparent background.*/
+    
+    .caption::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: transparent;
+        transition: background .35s ease-out;
+    }
+    /* On hover background color will change */
+    
+    .caption:hover::before {
+        background: rgba(0, 0, 0, .5);
+    }
